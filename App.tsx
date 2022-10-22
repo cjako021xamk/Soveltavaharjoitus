@@ -9,8 +9,6 @@ export default function App() {
    const [arvaukset, setArvaukset] = useState<any>(0);
    const [arvaus, setArvaus] = useState("");
    let havio = false;
-   let teksti = "";
-
    const aloitus = () => {
       setNumero(Math.floor(Math.random() * 12 + 1));
       setLoppu(false);
@@ -31,25 +29,17 @@ export default function App() {
       setArvaukset(arvaukset + 1);
    };
    if (arvaus === "Suurempi" && numero >= edellinenNumero) {
-      console.log("kissa");
    } else if (arvaus === "Suurempi" && numero < edellinenNumero) {
       havio = true;
-      teksti = arvaukset;
-      console.log(`Sait ${arvaukset} Oikein!`);
    }
    if (arvaus === "Pienempi" && numero < edellinenNumero) {
-      console.log("Pienempihän se..");
    } else if (arvaus === "Pienempi" && numero > edellinenNumero) {
       havio = true;
-      console.log(`Sait ${arvaukset} Oikein!`);
    }
 
-   useEffect(() => {
-      setArvaus("");
-   }, []);
+   
    useEffect(() => {
       setLoppu(true);
-      setArvaus("");
    }, [havio]);
 
    return (
@@ -94,7 +84,6 @@ const styles = StyleSheet.create({
       justifyContent: "space-around",
       marginBottom: 400,
       marginTop: 100,
-      backgroundColor: "red",
    },
    numero: {
       alignItems: "center",
