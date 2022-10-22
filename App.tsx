@@ -12,10 +12,13 @@ export default function App() {
    const [arvaukset, setArvaukset] = useState<any>(0);
    const [arvaus, setArvaus] = useState("");
    let havio = false;
+
+
    const aloitus = () => {
       setNumero(Math.floor(Math.random() * 12 + 1));
       setLoppu(false);
       setArvaukset(0);
+
    };
 
    const suurempi = (): any => {
@@ -43,6 +46,7 @@ export default function App() {
    
    useEffect(() => {
       setLoppu(true);
+      setArvaus("")
    }, [havio]);
 
    return (
