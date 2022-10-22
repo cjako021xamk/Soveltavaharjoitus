@@ -9,7 +9,6 @@ export default function App() {
   const [numero, setNumero] = useState<any>();
   const [loppu, setLoppu] = useState<boolean>(true);
   const [edellinenNumero, setEdellinenNumero] = useState<any>();
-  const [arvaukset, setArvaukset] = useState<any>(0);
   const [arvaus, setArvaus] = useState("");
   let havio = false;
 
