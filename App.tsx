@@ -1,6 +1,9 @@
 import { setStatusBarNetworkActivityIndicatorVisible } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { Button, Text } from 'react-native-paper';
+
+
 
 export default function App() {
    const [numero, setNumero] = useState<any>();
@@ -45,27 +48,27 @@ export default function App() {
    return (
       <>
          <View style={styles.container}>
-            <Text style={styles.otsikko}>Suurempi vai pienempi arvaaminen</Text>
+            <Text variant="displaySmall" style={{textAlign: "center"}}>Suurempi vai pienempi arvaaminen</Text>
          </View>
          <View>
-            <Text style={styles.numero}>{numero}</Text>
-            <Text style={styles.arvaukset}>
+            <Text variant="headlineLarge" style={{textDecorationLine: 'underline'}}>Nykyinen Numero :{numero}</Text>
+            <Text variant="headlineLarge" style={{ fontWeight: 'bold', marginTop: 5, textDecorationLine: 'underline'}}>
                {" "}
                Oikeat arvaukset : {arvaukset}
-            </Text>
+          </Text>
          </View>
          <View style={styles.napit}>
             <Button
                disabled={loppu}
-               title="Suurempi"
                onPress={suurempi}
-            ></Button>
+               mode={"contained"}
+            >Suurempi</Button>
             <Button
                disabled={loppu}
-               title="Pienempi"
                onPress={pienempi}
-            ></Button>
-            <Button title="Aloita" onPress={aloitus}></Button>
+               mode={"contained"}
+            >Pienempi</Button>
+            <Button disabled={!loppu} onPress={aloitus} mode={"contained"}>Aloita</Button>
          </View>
       </>
    );
