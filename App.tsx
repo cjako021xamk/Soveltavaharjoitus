@@ -5,6 +5,11 @@ import { Button, Text } from 'react-native-paper';
 
 
 
+  const [numero, setNumero] = useState<any>();
+  const [loppu, setLoppu] = useState<boolean>(true);
+  const [edellinenNumero, setEdellinenNumero] = useState<any>();
+  const [arvaus, setArvaus] = useState("");
+  let havio = false;
 export default function App() {
    const [numero, setNumero] = useState<any>();
    const [loppu, setLoppu] = useState<boolean>(true);
@@ -12,6 +17,7 @@ export default function App() {
    const [arvaukset, setArvaukset] = useState<any>(0);
    const [arvaus, setArvaus] = useState("");
    let havio = false;
+
 
 
    const aloitus = () => {
