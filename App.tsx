@@ -37,10 +37,10 @@ export default function App() {
    };
  if (arvaus === "Suurempi" && numero < edellinenNumero) {
       havio = true;
-   }
- if (arvaus === "Pienempi" && numero > edellinenNumero) {
+   } else  if (arvaus === "Pienempi" && numero > edellinenNumero) {
       havio = true;
-   }
+   } 
+
 
    
    useEffect(() => {
