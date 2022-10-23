@@ -35,12 +35,10 @@ export default function App() {
       setEdellinenNumero(numero);
       setArvaukset(arvaukset + 1);
    };
-   if (arvaus === "Suurempi" && numero >= edellinenNumero) {
-   } else if (arvaus === "Suurempi" && numero < edellinenNumero) {
+ if (arvaus === "Suurempi" && numero < edellinenNumero) {
       havio = true;
    }
-   if (arvaus === "Pienempi" && numero < edellinenNumero) {
-   } else if (arvaus === "Pienempi" && numero > edellinenNumero) {
+ if (arvaus === "Pienempi" && numero > edellinenNumero) {
       havio = true;
    }
 
